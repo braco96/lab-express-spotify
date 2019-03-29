@@ -1,0 +1,5 @@
+{{!-- En albums.hbs --}}
+{{#if this.images.[0]}}
+  <img class="album-cover" src="{{this.images.[0].url}}" alt="{{this.name}}" />
+{{/if}}
+<a class="button" href="/tracks/{{this.id}}">Ver canciones</a>

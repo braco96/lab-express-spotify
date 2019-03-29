@@ -1,0 +1,175 @@
+/* ─────────────────────────────
+   Spotify Lab – style.css
+   Ruta: /public/stylesheets/style.css
+   ───────────────────────────── */
+
+/* Reset básico */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+img { max-width: 100%; display: block; }
+
+/* Tipografía y colores */
+:root{
+  --bg: #0e1117;
+  --card: #161b22;
+  --muted: #a3a3a3;
+  --text: #e6edf3;
+  --brand: #1db954; /* verde Spotify */
+  --brand-2: #169c45;
+  --border: #2a2f36;
+  --link: #58a6ff;
+}
+
+html, body {
+  height: 100%;
+}
+
+body{
+  background: radial-gradient(1200px 800px at 10% -10%, rgba(29,185,84,.15), transparent 40%) var(--bg);
+  color: var(--text);
+  font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+  padding: 24px;
+}
+
+/* Contenedor principal */
+.container{
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Títulos */
+h1{
+  font-size: 2rem;
+  margin: 8px 0 16px;
+}
+h2{
+  font-size: 1.125rem;
+  margin: 8px 0;
+}
+
+/* Enlaces */
+a{
+  color: var(--link);
+  text-decoration: none;
+}
+a:hover{ text-decoration: underline; }
+
+/* Botones */
+.button,
+button,
+input[type="submit"]{
+  background: var(--brand);
+  color: #0b1510;
+  border: 0;
+  border-radius: 999px;
+  padding: 10px 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform .04s ease, background .15s ease;
+}
+.button:hover,
+button:hover,
+input[type="submit"]:hover{
+  background: var(--brand-2);
+  transform: translateY(-1px);
+}
+.button:active,
+button:active,
+input[type="submit"]:active{
+  transform: translateY(0);
+}
+
+/* Tarjetas y listas */
+.card{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.25);
+}
+
+ul{
+  list-style: none;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  margin-top: 12px;
+}
+li{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Imágenes de artista/álbum */
+.artist-cover,
+.album-cover{
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+/* Página de inicio – formulario de búsqueda */
+form{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 10px 0 16px;
+}
+input[type="text"]{
+  flex: 1 1 320px;
+  min-width: 220px;
+  background: #0b0f14;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 10px 12px;
+  outline: none;
+}
+input[type="text"]::placeholder{
+  color: var(--muted);
+}
+
+/* Páginas específicas (opcionales) */
+.page-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+/* Tracks */
+audio{
+  width: 100%;
+  margin-top: 6px;
+  outline: none;
+  border-radius: 10px;
+}
+.track-row{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: space-between;
+}
+.track-name{
+  font-weight: 600;
+}
+
+/* Utilidades */
+.mt-1{ margin-top: 6px; }
+.mt-2{ margin-top: 12px; }
+.mt-3{ margin-top: 18px; }
+.center{ text-align: center; }
+
+/* Responsive tweaks */
+@media (max-width: 560px){
+  body{ padding: 16px; }
+  h1{ font-size: 1.6rem; }
+}

@@ -1,0 +1,13 @@
+<h1 class="page-header">Resultados para "{{query}}"</h1>
+
+<ul>
+  {{#each artists}}
+    <li>
+      <h2>{{this.name}}</h2>
+      {{#if this.images.[0]}}
+        <img class="artist-cover" src="{{this.images.[0].url}}" alt="{{this.name}}" />
+      {{/if}}
+      <a class="button" href="/albums/{{this.id}}">Ver álbumes</a>
+    </li>
+  {{/each}}
+</ul>

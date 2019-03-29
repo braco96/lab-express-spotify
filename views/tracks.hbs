@@ -1,0 +1,9 @@
+{{!-- En tracks.hbs --}}
+<li>
+  <div class="track-row">
+    <span class="track-name">{{this.name}}</span>
+  </div>
+  {{#if this.preview_url}}
+    <audio controls src="{{this.preview_url}}"></audio>
+  {{/if}}
+</li>

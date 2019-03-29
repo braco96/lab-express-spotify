@@ -1,0 +1,16 @@
+{{!-- Listado de artistas obtenidos de la búsqueda --}}
+<h1>Resultados para "{{query}}"</h1>
+<ul>
+  {{!-- Recorremos cada artista devuelto por la API --}}
+  {{#each artists}}
+    <li>
+      <h2>{{this.name}}</h2>
+      {{!-- Mostramos la primera imagen disponible si existe --}}
+      {{#if this.images.[0]}}
+        <img src="{{this.images.[0].url}}" alt="{{this.name}}" style="width: 200px;" />
+      {{/if}}
+      {{!-- Enlace para consultar los álbumes del artista --}}
+      <a href="/albums/{{this.id}}">Ver álbumes</a>
+    </li>
+  {{/each}}
+</ul>
